@@ -1,0 +1,39 @@
+tarefas = []
+
+while True:
+print("\n1 - Adicionar tarefa")
+print("2 - Ver tarefas")
+print("3 - Remover tarefa")
+print("4 - Sair")
+
+opcao = input("Escolha: ")
+
+if opcao == "1":
+    tarefa = input("Digite a tarefa: ")
+    tarefas.append(tarefa)
+    print("Tarefa adicionada!")
+
+elif opcao == "2":
+    if tarefas:
+        for i, tarefa in enumerate(tarefas):
+            print(i + 1, "-", tarefa)
+    else:
+        print("Nenhuma tarefa.")
+
+elif opcao == "3":
+    if tarefas:
+        numero = int(input("Digite o número da tarefa: "))
+        if 1 <= numero <= len(tarefas):
+            tarefas.pop(numero - 1)
+            print("Tarefa removida!")
+        else:
+            print("Número inválido.")
+    else:
+        print("Nenhuma tarefa.")
+
+elif opcao == "4":
+    print("Saindo...")
+    break
+
+else:
+    print("Opção inválida.")
